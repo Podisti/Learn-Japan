@@ -23,19 +23,17 @@
         <a href="hiragana.html">Hiragana</a>
     </div>
 
-    <button onclick="displayKata()">Next</button>
-
     <div id="app">
         <p id="display"></p>
 
-        <form>
-            <label for="fname">Answer:</label><br>
-            <input type="text" id="answer" value=""><br>
-        <p id="display"></p>
+        <label for="answer">Answer</label>
+        <input type="text" id="answer" name="answer" required minlength="1" maxlength="4" size="10">
+
+        <button onclick="checkKata()">Check</button>
     </div>
 
     <script>
-        // document.getElementById("display").innerText = displayKata();        
+        displayKata();
     </script>
 
 </body>

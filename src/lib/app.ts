@@ -8,25 +8,25 @@ function getRandomInt(min, max) : number{ //generátor náhodného čísla
     return Math.floor(Math.random() * (max - min + 1)) + min; 
 }
 
-function displayKata()/*: string*/ { // zobrazí znak
+function displayKata() { // zobrazí znak
     let letters: string[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "キャ", "キュ", "キョ", "サ",
                             "シ", "ス", "セ", "ソ", "シャ", "シュ", "ショ", "タ", "チ", "ツ", "テ", "ト", "チャ", "チュ",
                             "チョ", "ナ", "ニ", "ヌ", "ネ", "ノ", "ニャ", "ニュ", "ニョ", "ハ", "ヒ", "フ", "ヘ", "ホ",
                             "ヒャ", "ヒュ", "ヒョ", "マ", "ミ", "ム", "メ", "モ", "ミャ", "ミュ", "ミョ", "ヤ", "ユ", "ヨ",
-                            "ラ", "リ", "ル", "レ", "ロ", "リャ", "リュ", "リョ", "ワ", "ン", "ガ", "ギ", "グ", "ゲ", "ゴ",
+                            "ラ", "リ", "ル", "レ", "ロ"/*, "リャ", "リュ", "リョ", "ワ", "ン", "ガ", "ギ", "グ", "ゲ", "ゴ",
                             "ギャ", "ギュ", "ギョ", "ザ", "ジ", "ズ", "ゼ", "ゾ", "ジャ", "ジュ", "ジョ", "ダ", "ヂ", "バ",
                             "ビ", "ブ", "ベ", "ボ", "ビャ", "ビュ", "ビョ", "パ", "ピ", "プ", "ペ", "ポ", "ピャ", "ピュ",
-                            "ピョ", "ファ", "フィ", "フェ", "フォ", "ツァ", "ティ", "トゥ", "ウェ", "ウォ"];
+"ピョ", "ファ", "フィ", "フェ", "フォ", "ツァ", "ティ", "トゥ", "ウェ", "ウォ"*/];
 
     var chosen = letters[getRandomInt(0, letters.length)]
-    //return chosen;
 
     document.getElementById("display").innerText = chosen;
 }
 
-function check(input: string){
-    let table: { [key: string]: any } = {
-        "ア": "a ア", "イ": "i", "ウ": "u", "エ": "e", "オ": "o",
+function checkKata(){
+
+    let table: { [key: string]: string } = {
+        "ア": "a", "イ": "i", "ウ": "u", "エ": "e", "オ": "o",
         "カ": "ka", "キ": "ki", "ク": "ku", "ケ": "ke", "コ": "ko", "キャ": "kya", "キュ": "kyu", "キョ": "kyo",
         "サ": "sa", "シ": "shi", "ス": "su", "セ": "se", "ソ": "so", "シャ": "sha", "シュ": "shu", "ショ": "sho",
         "タ": "ta", "チ": "chi", "ツ": "tsu", "テ": "te", "ト": "to", "チャ": "cha", "チュ": "chu", "チョ": "cho",
@@ -37,12 +37,21 @@ function check(input: string){
         "ラ": "ra", "リ": "ri", "ル": "ru", "レ": "re", "ロ": "ro", "リャ": "rya", "リュ": "ryu", "リョ": "ryo",
         "ワ": "wa",
         "ン": "n",
-        "ガ": "ga", "ギ": "gi", "グ": "gu", "ゲ": "ge", "ゴ": "go", "ギャ": "gya", "ギュ": "guy", "ギョ": "gyo",
+        /*"ガ": "ga", "ギ": "gi", "グ": "gu", "ゲ": "ge", "ゴ": "go", "ギャ": "gya", "ギュ": "guy", "ギョ": "gyo",
         "ザ": "za", "ジ": "ji", "ズ": "zu", "ゼ": "ze", "ゾ": "zo", "ジャ": "ja", "ジュ": "ju", "ジョ": "jo",
-        "ダ": "da", "ヂ": "(ji)", "ヅ": "(zu)", "デ": "de", "ド": "do",
+        "ダ": "da", "ヂ": "ji", "ヅ": "zu", "デ": "de", "ド": "do",
         "バ": "ba", "ビ": "bi", "ブ": "bu", "ベ": "be", "ボ": "bo", "ビャ": "bya", "ビュ": "byu", "ビョ": "byo",
         "パ": "pa", "ピ": "pi", "プ": "pu", "ペ": "pe", "ポ": "po", "ピャ": "pya", "ピュ": "pyu", "ピョ": "pyo",
         "ファ": "fa", "フィ": "fi", "フェ": "fe", "フォ": "fo",
-        "ツァ": "tsa", "ティ": "ti", "トゥ": "tu", "ウェ": "we", "ウォ": "wo"
+        "ツァ": "tsa", "ティ": "ti", "トゥ": "tu", "ウェ": "we", "ウォ": "wo"*/
+    }
+
+    console.log(table[document.getElementById("display").innerText]);
+
+    if (((<HTMLInputElement>document.getElementById("answer")).value) == table[document.getElementById("display").innerText]) {
+        document.getElementById("display").innerText = "y";
+    }
+    else {
+        document.getElementById("display").innerText = "x";
     }
 }
