@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="./style.css">
 
-    <script src="./script.js"></script>
+    <script src="./scripts/app.js"></script>
 </head>
 
 <body>
@@ -18,10 +18,25 @@
         <h1>Katakana</h1>
     </div>
 
-    <div id="crossroad">
-        <a href="hiragana.html">Hiragana</a>
+    <div id="nav">
         <a href="index.html">Main</a>
+        <a href="hiragana.html">Hiragana</a>
     </div>
+
+    <button onclick="displayKata()">Next</button>
+
+    <div id="app">
+        <p id="display"></p>
+
+        <form>
+            <label for="fname">Answer:</label><br>
+            <input type="text" id="answer" value=""><br>
+        <p id="display"></p>
+    </div>
+
+    <script>
+        // document.getElementById("display").innerText = displayKata();        
+    </script>
 
 </body>
 

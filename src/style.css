@@ -2,3 +2,7 @@ html {
     font-size: 18px;
     background-color: antiquewhite;
 }
+
+#display {
+    font-size: 60px;
+}
