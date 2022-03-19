@@ -1,0 +1,19 @@
+{
+  "name": "learn-japan",
+  "version": "1.0.0",
+  "description": "An app for learning Japanese alphabets.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Podisti/Learn-Japan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Podisti/Learn-Japan/issues"
+  },
+  "homepage": "https://github.com/Podisti/Learn-Japan#readme"
+}
