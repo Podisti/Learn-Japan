@@ -46,12 +46,10 @@ function checkKata(){
         "ツァ": "tsa", "ティ": "ti", "トゥ": "tu", "ウェ": "we", "ウォ": "wo"*/
     }
 
-    console.log(table[document.getElementById("display").innerText]);
-
     if (((<HTMLInputElement>document.getElementById("answer")).value) == table[document.getElementById("display").innerText]) {
-        document.getElementById("display").innerText = "y";
+        (<HTMLInputElement>document.getElementById("answer")).value = "correct";
     }
     else {
-        document.getElementById("display").innerText = "x";
+        (<HTMLInputElement>document.getElementById("answer")).value = table[document.getElementById("display").innerText];
     }
 }

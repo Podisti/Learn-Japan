@@ -1,8 +1,47 @@
 html {
     font-size: 18px;
     background-color: antiquewhite;
+    height: 100%;
 }
 
 #display {
     font-size: 60px;
+
+}
+
+#app {
+    background-color: white;
+    margin: 0 auto;
+    padding: 10px;
+    width: max-content;
+
+    box-sizing: border-box;
+    border-radius: 15px;
+
+
+    text-align: center;
+}
+
+#display {
+    background-color: rgb(179, 171, 248);
+    border-radius: 70px;
+    min-width: 70px;
+    width: max-content;
+    height: 70px;
+
+    margin: 5px auto;
+    padding: 2px;
+
+    text-align: center;
+}
+
+#menu {
+    margin: 20rem auto;
+    padding: 20px;
+    text-align: center;
+    background-color: aqua;
+    width: max-content;
+    height: max-content;
+
+
 }
