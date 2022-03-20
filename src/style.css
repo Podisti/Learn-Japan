@@ -89,6 +89,24 @@ input[type=text] {
     font-family: "Press Start 2P", cursive;
 }
 
+#score {
+    position: relative;
+    text-align: right;
+
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+
+#counter {
+    position: relative;
+    text-align: left;
+
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
 
 /* Colors: 
     #EFB8CC pink

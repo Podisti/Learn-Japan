@@ -1,3 +1,6 @@
+let count = 0;
+let success = 0;
+
 function getRandomInt(min, max): number { //generátor náhodného čísla
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -54,13 +57,16 @@ function checkKata() {
     if (((<HTMLInputElement>document.getElementById("answer")).value) == table[document.getElementById("display").innerText]) {
         (<HTMLInputElement>document.getElementById("answer")).value = "yes";
         document.getElementById("display").style.background = "#d7f3de";
+        score(true);
     }
     else {
         (<HTMLInputElement>document.getElementById("answer")).value = table[document.getElementById("display").innerText];
         document.getElementById("display").style.background = "#f7dce0";
+        score(false);
     }
     (<HTMLInputElement>document.getElementById("button")).setAttribute("onClick", "javascript: displayKata();");
     (<HTMLInputElement>document.getElementById("button")).innerText = "next";
+
 }
 
 
@@ -116,11 +122,25 @@ function checkHira() {
     if (((<HTMLInputElement>document.getElementById("answer")).value) == table[document.getElementById("display").innerText]) {
         (<HTMLInputElement>document.getElementById("answer")).value = "yes";
         document.getElementById("display").style.background = "#d7f3de";
+        score(true);
     }
     else {
         (<HTMLInputElement>document.getElementById("answer")).value = table[document.getElementById("display").innerText];
         document.getElementById("display").style.background = "#f7dce0";
+        score(false);
     }
     (<HTMLInputElement>document.getElementById("button")).setAttribute("onClick", "javascript: displayHira();");
     (<HTMLInputElement>document.getElementById("button")).innerText = "next";
+
+}
+
+
+function score(correct: boolean) {
+    count++;
+    if (correct == true) {
+        success++;
+    }
+
+    document.getElementById("score").innerText = Math.floor(success / count * 100).toString() + "%";
+    document.getElementById("counter").innerText = count.toString();
 }
