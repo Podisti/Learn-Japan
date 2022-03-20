@@ -19,7 +19,7 @@
             <h1>Katakana</h1>
         </div>
 
-        <div id="nav">
+        <div class="nav">
             <a href="index.html">Main</a>
             <a href="hiragana.html">Hiragana</a>
         </div>
@@ -28,8 +28,8 @@
     <div id="app">
         <p id="display"></p>
 
-        <label for="answer">Answer</label>
-        <input type="text" id="answer" name="answer" required minlength="1" maxlength="4" size="10">
+        <label for="answer">Answer:</label>
+        <input type="text" id="answer" name="answer" required minlength="1" maxlength="4" size="10" spellcheck="false">
 
         <button id="button" onclick="checkKata()">Check</button>
     </div>

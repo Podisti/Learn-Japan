@@ -1,13 +1,10 @@
-function test(): string {
-    return new Date().toDateString();
-}
-
 function getRandomInt(min, max): number { //generátor náhodného čísla
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Katakana
 function displayKata() { // zobrazí znak
     let letters: string[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "キャ", "キュ", "キョ", "サ",
         "シ", "ス", "セ", "ソ", "シャ", "シュ", "ショ", "タ", "チ", "ツ", "テ", "ト", "チャ", "チュ",
@@ -18,15 +15,18 @@ function displayKata() { // zobrazí znak
         "ビ", "ブ", "ベ", "ボ", "ビャ", "ビュ", "ビョ", "パ", "ピ", "プ", "ペ", "ポ", "ピャ", "ピュ",
         "ピョ", "ファ", "フィ", "フェ", "フォ", "ツァ", "ティ", "トゥ", "ウェ", "ウォ"];
 
-    var chosen = letters[getRandomInt(0, letters.length)]
+    var chosen = letters[getRandomInt(0, letters.length - 1)]
 
     document.getElementById("display").innerText = chosen;
-    document.getElementById("display").style.background = "rgb(179, 171, 248)";
+    document.getElementById("display").style.background = "#A2BDC6";
     (<HTMLInputElement>document.getElementById("answer")).value = "";
 
     (<HTMLInputElement>document.getElementById("button")).setAttribute("onClick", "javascript: checkKata();");
     (<HTMLInputElement>document.getElementById("button")).innerText = "check";
+
+    (<HTMLInputElement>document.getElementById("answer")).focus();
 }
+
 
 function checkKata() {
 
@@ -53,12 +53,74 @@ function checkKata() {
 
     if (((<HTMLInputElement>document.getElementById("answer")).value) == table[document.getElementById("display").innerText]) {
         (<HTMLInputElement>document.getElementById("answer")).value = "correct";
-        document.getElementById("display").style.background = "lightgreen";
+        document.getElementById("display").style.background = "#d7f3de";
     }
     else {
         (<HTMLInputElement>document.getElementById("answer")).value = table[document.getElementById("display").innerText];
-        document.getElementById("display").style.background = "red";
+        document.getElementById("display").style.background = "#f7dce0";
     }
     (<HTMLInputElement>document.getElementById("button")).setAttribute("onClick", "javascript: displayKata();");
+    (<HTMLInputElement>document.getElementById("button")).innerText = "next";
+}
+
+
+// Hiragana
+function displayHira() { // zobrazí znak
+    let letters: string[] = ["あ", "い", "う", "え", "お",
+        "か", "き", "く", "け", "こ", "きゃ", "きゅ", "きょ",
+        "さ", "し", "す", "せ", "そ", "しゃ", "しゅ", "しょ",
+        "た", "ち", "つ", "て", "と", "ちゃ", "ちゅ", "ちょ",
+        "な", "に", "ぬ", "ね", "の", "にゃ", "にゅ", "にょ",
+        "は", "ひ", "ふ", "へ", "ほ", "ひゃ", "ひゅ", "ひょ",
+        "ま", "み", "む", "め", "も", "みゃ", "みょ", "や",
+        "ゆ", "よ", "ら", "り", "る", "れ", "ろ", "りゃ", "りゅ", "りょ",
+        "わ", "を", "ん", "が", "ぎ", "ぐ", "げ",
+        "ご", "ぎゃ", "ぎゅ", "ぎょ", "ざ",
+        "じ", "ず", "ぜ", "ぞ", "じゃ", "じゅ", "じょ",
+        "だ", "ぢ", "づ", "で", "ど",
+        "ば", "び", "ぶ", "べ", "ぼ", "びゃ", "びゅ", "びょ",
+        "ぱ", "ぴ", "ぷ", "ぺ", "ぽ", "ぴゃ", "ぴゅ", "ぴょ"];
+
+    var chosen = letters[getRandomInt(0, letters.length - 1)]
+
+    document.getElementById("display").innerText = chosen;
+    document.getElementById("display").style.background = "#A2BDC6";
+    (<HTMLInputElement>document.getElementById("answer")).value = "";
+
+    (<HTMLInputElement>document.getElementById("button")).setAttribute("onClick", "javascript: checkHira();");
+    (<HTMLInputElement>document.getElementById("button")).innerText = "check";
+
+    (<HTMLInputElement>document.getElementById("answer")).focus();
+}
+
+
+function checkHira() {
+
+    let table: { [key: string]: string } = {
+        "あ": "a", "い": "i", "う": "u", "え": "e", "お": "o",
+        "か": "ka", "き": "ki", "く": "ku", "け": "ke", "こ": "ko", "きゃ": "kya", "きゅ": "kyu", "きょ": "kyo",
+        "さ": "sa", "し": "shi", "す": "su", "せ": "se", "そ": "so", "しゃ": "sha", "しゅ": "shu", "しょ": "sho",
+        "た": "ta", "ち": "chi", "つ": "tsu", "て": "te", "と": "to", "ちゃ": "cha", "ちゅ": "chu", "ちょ": "cho",
+        "な": "na", "に": "ni", "ぬ": "nu", "ね": "ne", "の": "no", "にゃ": "nya", "にゅ": "nyu", "にょ": "nyo",
+        "は": "ha", "ひ": "hi", "ふ": "fu", "へ": "he", "ほ": "ho", "ひゃ": "hya", "ひゅ": "hyu", "ひょ": "hyo",
+        "ま": "ma", "み": "mi", "む": "mu", "め": "me", "も": "mo", "みゃ": "mya", "みょ": "myo", "や": "ya",
+        "ゆ": "yu", "よ": "yo", "ら": "ra", "り": "ri", "る": "ru", "れ": "re", "ろ": "ro", "りゃ": "rya", "りゅ": "ryu", "りょ": "ryo",
+        "わ": "wa", "を": "wo", "ん": "n", "が": "ga", "ぎ": "gi", "ぐ": "gu", "げ": "ge",
+        "ご": "go", "ぎゃ": "gya", "ぎゅ": "gyu", "ぎょ": "gyo", "ざ": "za",
+        "じ": "ji", "ず": "zu", "ぜ": "ze", "ぞ": "zo", "じゃ": "ja", "じゅ": "ju", "じょ": "jo",
+        "だ": "da", "ぢ": "ji", "づ": "zu", "で": "de", "ど": "do",
+        "ば": "ba", "び": "bi", "ぶ": "bu", "べ": "be", "ぼ": "bo", "びゃ": "bya", "びゅ": "byu", "びょ": "byo",
+        "ぱ": "pa", "ぴ": "pi", "ぷ": "pu", "ぺ": "pe", "ぽ": "po", "ぴゃ": "pya", "ぴゅ": "pyu", "ぴょ": "pyo"
+    }
+
+    if (((<HTMLInputElement>document.getElementById("answer")).value) == table[document.getElementById("display").innerText]) {
+        (<HTMLInputElement>document.getElementById("answer")).value = "correct";
+        document.getElementById("display").style.background = "#d7f3de";
+    }
+    else {
+        (<HTMLInputElement>document.getElementById("answer")).value = table[document.getElementById("display").innerText];
+        document.getElementById("display").style.background = "#f7dce0";
+    }
+    (<HTMLInputElement>document.getElementById("button")).setAttribute("onClick", "javascript: displayHira();");
     (<HTMLInputElement>document.getElementById("button")).innerText = "next";
 }
