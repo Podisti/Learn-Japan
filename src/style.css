@@ -23,6 +23,7 @@ html {
   min-height: 180px;
 
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 #display {
@@ -57,7 +58,7 @@ html {
 }
 
 #button {
-  min-width: 70px;
+  min-width: 82px;
   min-height: 25px;
   background-color: #CAD4DE;
   border: solid;
@@ -66,8 +67,10 @@ html {
   box-shadow: 2px 2px #3F495B;
 
   text-align: center;
-  font-size: 10px;
+  font-size: 16px;
   font-family: "Press Start 2P", cursive;
+
+
 }
 
 a {
@@ -82,6 +85,8 @@ input[type=text] {
     color: #6C8091;
     outline: none;
     margin: 0;
+    font-size: 16px;
+    font-family: "Press Start 2P", cursive;
 }
 
 
