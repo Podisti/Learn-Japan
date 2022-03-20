@@ -43,5 +43,8 @@ html {
     width: max-content;
     height: max-content;
 
+}
 
+#button {
+    min-width: 50px;
 }
