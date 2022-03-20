@@ -52,7 +52,7 @@ function checkKata() {
     }
 
     if (((<HTMLInputElement>document.getElementById("answer")).value) == table[document.getElementById("display").innerText]) {
-        (<HTMLInputElement>document.getElementById("answer")).value = "correct";
+        (<HTMLInputElement>document.getElementById("answer")).value = "yes";
         document.getElementById("display").style.background = "#d7f3de";
     }
     else {
@@ -114,7 +114,7 @@ function checkHira() {
     }
 
     if (((<HTMLInputElement>document.getElementById("answer")).value) == table[document.getElementById("display").innerText]) {
-        (<HTMLInputElement>document.getElementById("answer")).value = "correct";
+        (<HTMLInputElement>document.getElementById("answer")).value = "yes";
         document.getElementById("display").style.background = "#d7f3de";
     }
     else {
