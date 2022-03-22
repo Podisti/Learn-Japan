@@ -69,12 +69,18 @@ html {
   text-align: center;
   font-size: 16px;
   font-family: "Press Start 2P", cursive;
-
-
 }
 
 a {
     color: #5C5F82;
+}
+
+.chart {
+  width: 600px;
+  border: solid;
+  border-width: 10px;
+  border-color: #A2BDC6;
+  box-shadow: 10px 10px #3F495B;
 }
 
 input[type=text] {
@@ -107,6 +113,12 @@ input[type=text] {
     float: left;
 }
 
+.author {
+  position: absolute;
+  font-size: 10px;
+  bottom: 2px;
+  left: 5px;
+}
 
 /* Colors: 
     #EFB8CC pink
